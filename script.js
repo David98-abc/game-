@@ -1,3 +1,9 @@
+-----
+
+### `script.js` (遊戲邏輯與排行榜)
+
+這是核心的 JavaScript 檔案，處理遊戲的邏輯（生成格子、消除、計分、計時）以及排行榜的儲存和顯示。
+
 ```javascript
 const gameBoard = document.getElementById('game-board');
 const scoreDisplay = document.getElementById('score');
@@ -264,6 +270,11 @@ function displayLeaderboard() {
 // --- 事件監聽器和初始載入 ---
 startButton.addEventListener('click', startGame);
 
+// 頁面載入時顯示排行榜
+document.addEventListener('DOMContentLoaded', () => {
+    initializeBoard(); // 初始化棋盤顯示
+    displayLeaderboard();
+});
 // 頁面載入時顯示排行榜
 document.addEventListener('DOMContentLoaded', () => {
     initializeBoard(); // 初始化棋盤顯示
