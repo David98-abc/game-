@@ -1,0 +1,137 @@
+```css
+body {
+font-family: 'Arial', sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background-color: #f0f2f5;
+margin: 0;
+color: #333;
+}
+
+.container {
+background-color: #fff;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 90%;
+   max-width: 800px;
+}
+
+h1 {
+color: #4CAF50;
+margin-bottom: 20px;
+}
+
+.game-area {
+display: flex;
+justify-content: space-around;
+align-items: flex-start;
+gap: 20px;
+margin-bottom: 30px;
+}
+
+#game-board {
+display: grid;
+grid-template-columns: repeat(8, 50px); /* 8x8 的格子 */
+grid-template-rows: repeat(8, 50px);
+border: 2px solid #4CAF50;
+border-radius: 5px;
+background-color: #e8f5e9;
+}
+
+.cell {
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+cursor: pointer;
+border: 1px solid #c8e6c9;
+box-sizing: border-box;
+transition: transform 0.1s ease-in-out;
+}
+
+.cell.selected {
+border: 3px solid #FFC107;
+transform: scale(1.05);
+}
+
+.game-info {
+text-align: left;
+background-color: #e0f2f7;
+padding: 15px 20px;
+border-radius: 8px;
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.game-info p {
+font-size: 1.2em;
+margin: 10px 0;
+}
+
+#start-button {
+background-color: #2196F3;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 1.1em;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+background-color: #1976D2;
+}
+
+.leaderboard-area {
+margin-top: 30px;
+border-top: 1px solid #eee;
+padding-top: 20px;
+}
+
+.leaderboard-area h2 {
+color: #FF9800;
+margin-bottom: 15px;
+}
+
+#leaderboard {
+list-style: none;
+padding: 0;
+max-height: 250px;
+overflow-y: auto; /* 超出高度時可滾動 */
+border: 1px solid #ddd;
+border-radius: 5px;
+background-color: #f9f9f9;
+}
+
+#leaderboard li {
+padding: 10px 15px;
+border-bottom: 1px solid #eee;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+#leaderboard li:last-child {
+border-bottom: none;
+}
+
+#leaderboard li:nth-child(odd) {
+background-color: #f2f2f2;
+}
+
+#leaderboard li span:first-child {
+font-weight: bold;
+color: #555;
+}
+
+.leaderboard-note {
+font-size: 0.9em;
+color: #666;
+margin-top: 10px;
+}
