@@ -1,4 +1,3 @@
-
 ```javascript
 const gameBoard = document.getElementById('game-board');
 const scoreDisplay = document.getElementById('score');
