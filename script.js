@@ -1,4 +1,3 @@
-```javascript
 const gameBoard = document.getElementById('game-board');
 const scoreDisplay = document.getElementById('score');
 const timeDisplay = document.getElementById('time');
@@ -147,7 +146,7 @@ function processMatches(matches) {
     let cellsToClear = new Set();
     matches.forEach(match => {
         match.forEach(cell => {
-            cellsToClear.add(`{cell.row}-{cell.col}`);
+            cellsToClear.add(`${cell.row}-${cell.col}`); // 修正這裡的語法
         });
         score += match.length * 10; // 每個消除的方塊加10分
     });
@@ -229,48 +228,4 @@ function getLeaderboard() {
 }
 
 function saveScore(newScore) {
-    const name = prompt('請輸入你的名字 (最多10個字):');
-    if (!name || name.trim() === '') {
-        return;
-    }
-    const sanitizedName = name.trim().substring(0, 10); // 限制長度
-
-    const leaderboard = getLeaderboard();
-    leaderboard.push({ name: sanitizedName, score: newScore, date: new Date().toLocaleString() });
-
-    // 只保留前10名
-    if (leaderboard.length > 10) {
-        leaderboard.sort((a, b) => b.score - a.score);
-        leaderboard.splice(10);
-    }
-
-    localStorage.setItem('match3Leaderboard', JSON.stringify(leaderboard));
-}
-
-function displayLeaderboard() {
-    const leaderboard = getLeaderboard();
-    leaderboardList.innerHTML = '';
-    if (leaderboard.length === 0) {
-        leaderboardList.innerHTML = '<li>目前沒有排名數據。</li>';
-        return;
-    }
-    leaderboard.forEach((entry, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<span>No.{index + 1} {entry.name}</span> <span>{entry.score} 分</span>`;
-        leaderboardList.appendChild(li);
-    });
-}
-
-// --- 事件監聽器和初始載入 ---
-startButton.addEventListener('click', startGame);
-
-// 頁面載入時顯示排行榜
-document.addEventListener('DOMContentLoaded', () => {
-    initializeBoard(); // 初始化棋盤顯示
-    displayLeaderboard();
-});
-// 頁面載入時顯示排行榜
-document.addEventListener('DOMContentLoaded', () => {
-    initializeBoard(); // 初始化棋盤顯示
-    displayLeaderboard();
-});
+    const name = prompt('請輸入你的
