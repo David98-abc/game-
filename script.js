@@ -147,7 +147,7 @@ function processMatches(matches) {
     let cellsToClear = new Set();
     matches.forEach(match => {
         match.forEach(cell => {
-            cellsToClear.add(`${cell.row}-${cell.col}`);
+            cellsToClear.add(`{cell.row}-{cell.col}`);
         });
         score += match.length * 10; // 每個消除的方塊加10分
     });
@@ -256,7 +256,7 @@ function displayLeaderboard() {
     }
     leaderboard.forEach((entry, index) => {
         const li = document.createElement('li');
-        li.innerHTML = `<span>No.${index + 1} ${entry.name}</span> <span>${entry.score} 分</span>`;
+        li.innerHTML = `<span>No.{index + 1} {entry.name}</span> <span>{entry.score} 分</span>`;
         leaderboardList.appendChild(li);
     });
 }
