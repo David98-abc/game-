@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消消樂排名賽</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>消消樂大挑戰</h1>
+        <div class="game-area">
+            <div id="game-board"></div>
+            <div class="game-info">
+                <p>分數：<span id="score">0</span></p>
+                <p>時間：<span id="time">60</span> 秒</p>
+                <button id="start-button">開始遊戲</button>
+            </div>
+        </div>
+
+        <div class="leaderboard-area">
+            <h2>即時排行榜</h2>
+            <ul id="leaderboard">
+                </ul>
+            <p class="leaderboard-note">（得分後會自動更新至此）</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
